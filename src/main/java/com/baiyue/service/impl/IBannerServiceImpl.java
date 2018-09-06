@@ -27,6 +27,7 @@ public class IBannerServiceImpl implements IBannerService{
 
 	@Override
 	public int deleteByPrimaryKey(Integer id) throws Exception {
+		System.out.println(id); 
 		return bannerDao.deleteByPrimaryKey(id);
 	}
 
