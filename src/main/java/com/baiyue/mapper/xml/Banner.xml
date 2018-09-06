@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.admin.dao.mapper.BannerMapper">
-  <resultMap id="BaseResultMap" type="cn.admin.bean.sys.Banner">
+<mapper namespace="com.baiyue.mapper.BannerMapper">
+  <resultMap id="BaseResultMap" type="com.baiyue.entity.Banner">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
     <result column="ad_name" jdbcType="VARCHAR" property="adName" />
@@ -20,7 +20,7 @@
     update banner set is_delete = 1
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <insert id="insert" parameterType="cn.admin.bean.sys.Banner">
+  <insert id="insert" parameterType="com.baiyue.entity.Banner">
     insert into banner (img_url, ad_name, 
       slider_time, create_time, create_user_id, 
       update_time, update_user_id, publish_time, 
@@ -32,7 +32,7 @@
       #{status,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}
       )
   </insert>
-  <update id="updateBanner" parameterType="cn.admin.bean.sys.Banner">
+  <update id="updateBanner" parameterType="com.baiyue.entity.Banner">
     update banner
     <trim prefix="set" suffixOverrides=",">
           <if test="imgUrl !=null and imgUrl !=''">img_url = #{imgUrl},</if>
