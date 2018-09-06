@@ -5,7 +5,7 @@
   <artifactId>byservice</artifactId>
   <version>${publish.version}</version>
   <name>byservice</name>
-  <url>http://maven.apache.org</url>
+ <description>byservice-center</description>
 
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
