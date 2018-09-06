@@ -18,7 +18,7 @@
     <bean id="serializeManager" class="cn.sdk.serialization.KryoUtil"></bean>
     
     <context:annotation-config />
-	<context:component-scan base-package="cn.admin" />
+	<context:component-scan base-package="com.baiyue" />
 	
 	<context:property-placeholder location="classpath:config.properties" ignore-unresolvable="true"/>
 	
