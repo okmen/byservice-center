@@ -128,7 +128,7 @@
 				<byservice.api.version>1.0.0-SNAPSHOT</byservice.api.version>
 				
 				<dubbo.registry.url><![CDATA[192.168.1.120:2181]]></dubbo.registry.url>
-				<dubbo.provider.port><![CDATA[32500]]></dubbo.provider.port>
+				<dubbo.provider.port><![CDATA[32501]]></dubbo.provider.port>
 				<dubbo.provider.timeout><![CDATA[10000]]></dubbo.provider.timeout>
 				<dubbo.monitor.address><![CDATA[192.168.1.120:7070]]></dubbo.monitor.address>
 
@@ -179,7 +179,7 @@
 				<sdk.version>1.0.0-SNAPSHOT</sdk.version>
 				<byservice.api.version>1.0.0-SNAPSHOT</byservice.api.version>
 				<dubbo.registry.url><![CDATA[test-zookeeper.chudaokeji.me:2181]]></dubbo.registry.url>
-				<dubbo.provider.port><![CDATA[32500]]></dubbo.provider.port>
+				<dubbo.provider.port><![CDATA[32501]]></dubbo.provider.port>
 				<dubbo.provider.timeout><![CDATA[10000]]></dubbo.provider.timeout>
 				<dubbo.monitor.address><![CDATA[test-monitor.chudaokeji.me:7070]]></dubbo.monitor.address>
 				
@@ -234,7 +234,7 @@
 				<sdk.version>1.0.0</sdk.version>
 				<byservice.api.version>1.0.0</byservice.api.version>
 				<dubbo.registry.url><![CDATA[zookeeper.szzj.me:2181]]></dubbo.registry.url>
-				<dubbo.provider.port><![CDATA[32500]]></dubbo.provider.port>
+				<dubbo.provider.port><![CDATA[32501]]></dubbo.provider.port>
 				<dubbo.provider.timeout><![CDATA[10000]]></dubbo.provider.timeout>
 				<dubbo.monitor.address><![CDATA[monitor.szzj.me:7070]]></dubbo.monitor.address>
 

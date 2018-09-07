@@ -39,6 +39,7 @@ public class IBannerServiceImpl implements IBannerService{
 	 * @throws Exception
 	 */
 	public Banner selectByPrimaryKey(Integer id) throws Exception{
+	
 		return null;
 	}
 
