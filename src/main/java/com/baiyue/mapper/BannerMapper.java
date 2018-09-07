@@ -15,5 +15,7 @@ public interface BannerMapper {
 	public int updateBanner(Banner banner) throws Exception;
 
 	public int deleteByPrimaryKey(@Param("id")Integer id) throws Exception;
+	
+	public Banner selectByPrimaryKey(Integer id);
 
 }
