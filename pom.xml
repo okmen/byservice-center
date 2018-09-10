@@ -83,7 +83,7 @@
 							<useUniqueVersions>true</useUniqueVersions>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix></classpathPrefix>
-							<mainClass>cn.admin.main.Provider</mainClass>
+							<mainClass>com.baiyue.main.Provider</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -157,10 +157,7 @@
 				<log4j.socket.port><![CDATA[10005]]></log4j.socket.port>
 				<isMWuserResultsTaskNeed>0</isMWuserResultsTaskNeed>
 				
-				<!-- 三方请求地址 -->				
-				<house.lianjiawebUrl>http://anjutest.openapi.shenzhenzjj.com/</house.lianjiawebUrl>
-				<!-- 领签测试请求地址 -->	
-				<LINQIAN.linqianwebUrl>http://qv2.linksign.cn/</LINQIAN.linqianwebUrl>
+				
 			</properties>
 		</profile>
 
@@ -207,14 +204,7 @@
 				<isOnline>1</isOnline>
 				<log4j.socket.host><![CDATA[test-logserver.choumei.me]]></log4j.socket.host>
 				<log4j.socket.port><![CDATA[10003]]></log4j.socket.port>
-				<isMWuserResultsTaskNeed>0</isMWuserResultsTaskNeed>
-				
-				<!-- 三方请求地址 -->				
-				<house.lianjiawebUrl>http://anjutest.openapi.shenzhenzjj.com/</house.lianjiawebUrl>
-				<!-- 领签测试请求地址 -->	
-				<LINQIAN.linqianwebUrl>http://qv2.linksign.cn/</LINQIAN.linqianwebUrl>
-				<!--住建局中转机地址-->
-				<zhujian.zhuJianZhongZhuanUrl>http://111.230.166.193:22/</zhujian.zhuJianZhongZhuanUrl>
+			
 			</properties>
 		</profile>
 	
@@ -261,14 +251,8 @@
 				<isOnline>0</isOnline>
 				<log4j.socket.host><![CDATA[logserver.choumei.cn]]></log4j.socket.host>
 				<log4j.socket.port><![CDATA[10003]]></log4j.socket.port>
-				<isMWuserResultsTaskNeed>1</isMWuserResultsTaskNeed>
+			
 				
-				<!-- 三方请求地址 -->				
-				<house.lianjiawebUrl>http://111.230.84.53:10201/</house.lianjiawebUrl>
-				<!-- 领签正式请求地址 -->	
-				<LINQIAN.linqianwebUrl>http://q.m.shenzhenzjj.com/</LINQIAN.linqianwebUrl>
-				<!--住建局中转机地址-->
-				<zhujian.zhuJianZhongZhuanUrl>http://111.230.166.193:22/</zhujian.zhuJianZhongZhuanUrl>
 			</properties>
 		</profile>
 	</profiles>
