@@ -116,7 +116,7 @@
 			</activation>
 			<distributionManagement>
 				<repository>
-					<id>snapshots</id>
+					<id>nexus-snapshots</id>
 					<url>http://132.232.37.89:8081/nexus/content/repositories/snapshots/</url>
 					<layout>default</layout>
 				</repository>
@@ -168,7 +168,7 @@
 			<id>test</id>
 			<distributionManagement>
 				<repository>
-					<id>snapshots</id>
+					<id>nexus-snapshots</id>
 					<url>http://132.232.37.89:8081/nexus/content/repositories/snapshots</url>
 					<layout>default</layout>
 				</repository>
@@ -222,7 +222,7 @@
 			<id>online</id>
 			<distributionManagement>
 				<repository>
-					<id>releases</id>
+					<id>nexus-releases</id>
 					<url>http://132.232.37.89:8081/nexus/content/repositories/releases/</url>
 					<layout>default</layout>
 				</repository>
