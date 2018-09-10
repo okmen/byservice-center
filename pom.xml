@@ -117,7 +117,7 @@
 			<distributionManagement>
 				<repository>
 					<id>snapshots</id>
-					<url>http://192.168.1.251:8081/nexus/content/repositories/snapshots/</url>
+					<url>http://132.232.37.89:8081/nexus/content/repositories/snapshots/</url>
 					<layout>default</layout>
 				</repository>
 			</distributionManagement>
@@ -169,7 +169,7 @@
 			<distributionManagement>
 				<repository>
 					<id>snapshots</id>
-					<url>http://192.168.1.251:8081/nexus/content/repositories/snapshots</url>
+					<url>http://132.232.37.89:8081/nexus/content/repositories/snapshots</url>
 					<layout>default</layout>
 				</repository>
 			</distributionManagement>
@@ -224,7 +224,7 @@
 			<distributionManagement>
 				<repository>
 					<id>releases</id>
-					<url>http://192.168.1.251:8081/nexus/content/repositories/releases/</url>
+					<url>http://132.232.37.89:8081/nexus/content/repositories/releases/</url>
 					<layout>default</layout>
 				</repository>
 			</distributionManagement>
