@@ -416,11 +416,6 @@
 			<version>0.4</version>
 		</dependency>
 		<dependency>
-			<groupId>cn.chudaokeji.lib</groupId>
-			<artifactId>common-sdk</artifactId>
-			<version>${sdk.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
@@ -445,10 +440,5 @@
 			<version>${byservice.api.version}</version>
 		</dependency>
 		
-		<dependency>
-		  <groupId>linksign-util.1.0</groupId>
-		  <artifactId>linksign-util.1.0</artifactId>
-		  <version>1.0</version>
-		</dependency>
 	</dependencies>
 </project>
