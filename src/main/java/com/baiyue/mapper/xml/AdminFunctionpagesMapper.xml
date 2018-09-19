@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baiyue.mapper.AdminFunctionpagesMapper" >
+  <resultMap id="BaseResultMap" type="com.baiyue.entity.AdminFunctionpages" >
+    <id column="PageId" property="pageid" jdbcType="INTEGER" />
+    <result column="PageName" property="pagename" jdbcType="VARCHAR" />
+    <result column="Path" property="path" jdbcType="VARCHAR" />
+    <result column="ParentPageId" property="parentpageid" jdbcType="INTEGER" />
+    <result column="Sort" property="sort" jdbcType="INTEGER" />
+    <result column="Status" property="status" jdbcType="INTEGER" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="UpdateTime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PageId, PageName, Path, ParentPageId, Sort, Status, CreateTime, UpdateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from admin_functionpages
+    where PageId = #{pageid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from admin_functionpages
+    where PageId = #{pageid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.baiyue.entity.AdminFunctionpages" >
+    insert into admin_functionpages (PageId, PageName, Path, 
+      ParentPageId, Sort, Status, 
+      CreateTime, UpdateTime)
+    values (#{pageid,jdbcType=INTEGER}, #{pagename,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
+      #{parentpageid,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.baiyue.entity.AdminFunctionpages" >
+    insert into admin_functionpages
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pageid != null" >
+        PageId,
+      </if>
+      <if test="pagename != null" >
+        PageName,
+      </if>
+      <if test="path != null" >
+        Path,
+      </if>
+      <if test="parentpageid != null" >
+        ParentPageId,
+      </if>
+      <if test="sort != null" >
+        Sort,
+      </if>
+      <if test="status != null" >
+        Status,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+      <if test="updatetime != null" >
+        UpdateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pageid != null" >
+        #{pageid,jdbcType=INTEGER},
+      </if>
+      <if test="pagename != null" >
+        #{pagename,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="parentpageid != null" >
+        #{parentpageid,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.baiyue.entity.AdminFunctionpages" >
+    update admin_functionpages
+    <set >
+      <if test="pagename != null" >
+        PageName = #{pagename,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        Path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="parentpageid != null" >
+        ParentPageId = #{parentpageid,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null" >
+        Sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        UpdateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where PageId = #{pageid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.baiyue.entity.AdminFunctionpages" >
+    update admin_functionpages
+    set PageName = #{pagename,jdbcType=VARCHAR},
+      Path = #{path,jdbcType=VARCHAR},
+      ParentPageId = #{parentpageid,jdbcType=INTEGER},
+      Sort = #{sort,jdbcType=INTEGER},
+      Status = #{status,jdbcType=INTEGER},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      UpdateTime = #{updatetime,jdbcType=TIMESTAMP}
+    where PageId = #{pageid,jdbcType=INTEGER}
+  </update>
+</mapper>
