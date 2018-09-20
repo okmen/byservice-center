@@ -18,7 +18,7 @@
    <select id="findList" resultMap="BaseResultMap"  ><!-- 02 获取角色相应的页面权力列表 -->
     select <include refid="Base_Column_List" />  from admin_rolepages where 1=1
     <if test="roleid != null" >
-        RoleId = #{roleid,jdbcType=INTEGER}
+      and  RoleId = #{roleid,jdbcType=INTEGER}
     </if>
   </select>
   
