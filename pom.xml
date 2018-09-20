@@ -148,8 +148,8 @@
 				<refreshToken.time>2592000</refreshToken.time>
                 
 				<env.url_prefix><![CDATA[test.]]></env.url_prefix>
-				<log4j.rootLogger><![CDATA[DEBUG,socket,R,stdout]]></log4j.rootLogger>
-				<log4j.logLevel><![CDATA[DEBUG]]></log4j.logLevel>
+				<log4j.rootLogger><![CDATA[INFO,socket,R,stdout]]></log4j.rootLogger>
+				<log4j.logLevel><![CDATA[INFO]]></log4j.logLevel>
 				<log4j.R.file><![CDATA[/opt/logs/byservice/byservice-center.log]]></log4j.R.file>
 				<isOnline>0</isOnline>
 				<log4j.socket.host><![CDATA[192.168.1.120]]></log4j.socket.host>
