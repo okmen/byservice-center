@@ -1,5 +1,6 @@
 package com.baiyue.service.impl.cts.user;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,7 @@ import com.baiyue.mapper.AdminRoleMapper;
 import com.baiyue.mapper.AdminRolepagesMapper;
 import com.baiyue.mapper.AdminUsersMapper;
 import com.baiyue.services.cts.user.ICtsUserService;
+import com.baiyue.vo.FunctionPageList;
 import com.baiyue.vo.result.LoginSuccessCtsUserInfo;
 import com.utils_max.ParseUtils;
 import com.utils_max.ResultMsg;
@@ -63,18 +65,14 @@ public class CtsUserServiceImpl implements ICtsUserService{
 				loginUser.setRealname(user.getRealname());
 				loginUser.setRoleId(user.getRoleid()); 
 				if(user.getRoleid()!=null&&user.getRoleid().intValue()>0){
-					System.out.println("用户角色:"); 
 					AdminRole role= roleMapper.selectByPrimaryKey(user.getRoleid());
 					if(role!=null){
 						loginUser.setRoleName(role.getRolename());
-						List<AdminFunctionpages>pageListAll=pageMapper.findList(1);//获取所有已经注册的页面
-						logger.info("所有注册页面共："+pageListAll==null?0:pageListAll.size()+"条");
-						List<AdminRolepages> rolePagelist=rolePageMapper.findList(user.getRoleid());
-						logger.info("角色【"+loginUser.getRoleName()+"】获取权力页面："+rolePagelist==null?0:rolePagelist.size()+"条");
+						loginUser.setPowerPageList(getRolePagelistPower(role.getRoleid())); 
 					}
 				}
+				//设置redis 
 				String token=UUID.randomUUID().toString();
-				System.out.println("token:"+token); 
 				RedisUtil.setObject(token, loginUser, 7200);
 				
 				Map<String, Object> resultData=new HashMap<>();
@@ -164,4 +162,70 @@ public class CtsUserServiceImpl implements ICtsUserService{
 		return result;
 	}
 	
+	/**
+	 * 获取cts角色的页面权限菜单联级
+	 * @author max
+	 * @date:   2018年9月20日
+	 * @Desc :
+	 * @param roleId
+	 * @return
+	 */
+	public List<FunctionPageList> getRolePagelistPower(Integer roleId){
+		List<AdminFunctionpages>pageListAll=pageMapper.findList(1);//获取所有已经注册的页面
+		List<AdminRolepages> rolePagelist=rolePageMapper.findList(roleId);
+		List<AdminFunctionpages> rolelst=new ArrayList<>();
+		List<FunctionPageList> firstList=new ArrayList<>();
+		if(rolePagelist!=null&&rolePagelist.size()>0){
+			for (AdminRolepages item : rolePagelist) {
+				for (AdminFunctionpages ii : pageListAll) {
+					if(ii.getPageid().equals(item.getPageid())){
+						rolelst.add(ii);
+						if(ii.getPageid()==null||ii.getPageid()==0){
+							FunctionPageList first=new FunctionPageList();
+							first.setPageId(ii.getPageid());
+							first.setPageName(ii.getPagename());
+							first.setPagePath(ii.getPath());
+							first.setIsEnable(1);
+							firstList.add(first);
+						}
+					}
+				}
+			}
+			
+		}
+		List<FunctionPageList> result= ff(firstList,rolelst);
+		return result;
+	}
+	
+	/**
+	 * 菜单联级递归
+	 * @author max
+	 * @date:   2018年9月20日
+	 * @Desc :
+	 * @param resultlist
+	 * @param list
+	 * @return
+	 */
+	private List<FunctionPageList> ff(List<FunctionPageList> resultlist,List<AdminFunctionpages> list){
+		if(resultlist!=null&&resultlist.size()>0){
+			for (FunctionPageList result : resultlist) {
+				List<FunctionPageList> sublist=new ArrayList<>();
+				for (AdminFunctionpages item : list) {
+					if(item.getPageid().equals(result.getPageId())){
+						FunctionPageList ss=new FunctionPageList();
+						ss.setPageId(item.getPageid());
+						ss.setPageName(item.getPagename());
+						ss.setPagePath(item.getPath());
+						ss.setIsEnable(1);
+						sublist.add(ss);
+					}
+				}
+				if(sublist.size()>0){
+					ff(sublist,list);
+					result.setSubList(sublist); 
+				}
+			}
+		}
+		return resultlist;
+	}
 }
