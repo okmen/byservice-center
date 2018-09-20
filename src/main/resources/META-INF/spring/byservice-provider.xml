@@ -19,5 +19,7 @@
 	
 	<!-- 轮播图信息 -->
 	<dubbo:service interface="com.baiyue.services.IBannerService" ref="bannerService" />
+	<!-- cts用户管理模块 -->
+	<dubbo:service interface="com.baiyue.services.cts.user.ICtsUserService" ref="cts_userService" />
 	
 </beans>
