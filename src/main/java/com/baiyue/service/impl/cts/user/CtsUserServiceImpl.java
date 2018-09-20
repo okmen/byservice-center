@@ -75,12 +75,7 @@ public class CtsUserServiceImpl implements ICtsUserService{
 				}
 				String token=UUID.randomUUID().toString();
 				System.out.println("token:"+token); 
-				try {
-					RedisUtil.setObject(token, loginUser, 7200);
-				} catch (Exception e) {
-					// TODO: handle exception
-					logger.error("redis问题："+e.getMessage()); 
-				}
+				RedisUtil.setObject(token, loginUser, 7200);
 				
 				Map<String, Object> resultData=new HashMap<>();
 				resultData.put("accessToken", token);

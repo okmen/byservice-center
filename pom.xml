@@ -26,7 +26,6 @@
 					<include>config.properties</include>
 					<include>META-INF/conf/dubbo.properties</include>
 					<include>applicationContext.xml</include>
-					<include>applicationContext-redis.xml</include>
 					<include>applicationContext-mybatis.xml</include>
 					<include>provider.xml</include>
 					<include>log4j.properties</include>
@@ -140,12 +139,10 @@
 				<mysql.admin.write.username><![CDATA[root]]></mysql.admin.write.username>
 				<mysql.admin.read.password><![CDATA[db_123456]]></mysql.admin.read.password>
 
-				<redis.user-center.configstr><![CDATA[admin-center1:192.168.1.121:6379,user-center2:192.168.1.121:6379]]></redis.user-center.configstr>
-				<redis.user-center.password><![CDATA[123456]]></redis.user-center.password>
+				<redis.ipstr>132.232.37.89</redis.ipstr>
+				<redis.port>6379</redis.port>
+				<redis.auth>zhangyao@20180730</redis.auth>
                 
-                <!-- accessToken有效期30天 -->
-                <accessToken.time>2592000</accessToken.time>
-				<refreshToken.time>2592000</refreshToken.time>
                 
 				<env.url_prefix><![CDATA[test.]]></env.url_prefix>
 				<log4j.rootLogger><![CDATA[INFO,socket,R,stdout]]></log4j.rootLogger>
@@ -188,13 +185,10 @@
 				<mysql.admin.write.password><![CDATA[db_123456]]></mysql.admin.write.password>
 	
 
-				<redis.user-center.configstr><![CDATA[admin-center1:r-wz9843c3cf91b414.redis.rds.aliyuncs.com:6379]]></redis.user-center.configstr>
-				<redis.user-center.password><![CDATA[Redis123456]]></redis.user-center.password>
+				<redis.ipstr>132.232.37.89</redis.ipstr>
+				<redis.port>6379</redis.port>
+				<redis.auth>zhangyao@20180730</redis.auth>
 				
-				<!-- accessToken有效期30天 -->
-                <accessToken.time>2592000</accessToken.time>
-				<refreshToken.time>2592000</refreshToken.time>
-                <encypt.access.token.time>2592000</encypt.access.token.time>
                 
 				<env.url_prefix><![CDATA[test.]]></env.url_prefix>
 				<log4j.rootLogger><![CDATA[DEBUG,socket,R,stdout]]></log4j.rootLogger>
@@ -234,13 +228,9 @@
 				<mysql.admin.write.username><![CDATA[root]]></mysql.admin.write.username>
 				<mysql.admin.read.password><![CDATA[db_123456]]></mysql.admin.read.password>
 				
-                <redis.user-center.configstr><![CDATA[admin-center1:172.16.16.12:6379]]></redis.user-center.configstr>
-				<redis.user-center.password><![CDATA[crs-ltib2f1b:Redis123456]]></redis.user-center.password>
-				
-                <!-- accessToken有效期30天 -->
-                <accessToken.time>2592000</accessToken.time>
-				<refreshToken.time>2592000</refreshToken.time>
-                <encypt.access.token.time>2592000</encypt.access.token.time>
+                <redis.ipstr>132.232.37.89</redis.ipstr>
+				<redis.port>6379</redis.port>
+				<redis.auth>zhangyao@20180730</redis.auth>
                 
 				<env.url_prefix><![CDATA[]]>
 				</env.url_prefix>
@@ -381,11 +371,6 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
 			<version>2.4.9</version>
-		</dependency>
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>2.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
