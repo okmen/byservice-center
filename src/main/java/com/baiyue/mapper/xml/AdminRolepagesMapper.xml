@@ -9,12 +9,19 @@
   <sql id="Base_Column_List" >
     ID, RoleId, PageId
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" ><!-- 01  -->
     select 
     <include refid="Base_Column_List" />
     from admin_rolepages
     where ID = #{id,jdbcType=INTEGER}
   </select>
+   <select id="findList" resultMap="BaseResultMap"  ><!-- 02 获取角色相应的页面权力列表 -->
+    select <include refid="Base_Column_List" />  from admin_rolepages where 1=1
+    <if test="roleid != null" >
+        RoleId = #{roleid,jdbcType=INTEGER}
+    </if>
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from admin_rolepages
     where ID = #{id,jdbcType=INTEGER}

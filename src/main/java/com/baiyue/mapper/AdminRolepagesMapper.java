@@ -1,5 +1,9 @@
 package com.baiyue.mapper;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.baiyue.entity.AdminRolepages;
 
 public interface AdminRolepagesMapper {
@@ -14,4 +18,13 @@ public interface AdminRolepagesMapper {
     int updateByPrimaryKeySelective(AdminRolepages record);
 
     int updateByPrimaryKey(AdminRolepages record);
+    /**
+     * 获取角色的页面权力列表
+     * @author max
+     * @date:   2018年9月20日
+     * @Desc :
+     * @param roleid
+     * @return
+     */
+    List<AdminRolepages> findList(@Param("roleid")Integer roleid);
 }

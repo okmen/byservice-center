@@ -20,6 +20,13 @@
     from admin_functionpages
     where PageId = #{pageid,jdbcType=INTEGER}
   </select>
+   <select id="findList" resultMap="BaseResultMap"  ><!-- 查询所有cts注册页面 -->
+    select <include refid="Base_Column_List" />  from admin_functionpages where 1=1
+    <if test="status != null" >
+        Status = #{status,jdbcType=INTEGER}
+    </if>
+    order by Sort asc
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from admin_functionpages
     where PageId = #{pageid,jdbcType=INTEGER}
