@@ -192,7 +192,7 @@
 				<log4j.logLevel><![CDATA[DEBUG]]></log4j.logLevel>
 				<log4j.R.file><![CDATA[/opt/logs/byservice/byservice-center.log]]></log4j.R.file>
 				<isOnline>1</isOnline>
-				<log4j.socket.host><![CDATA[test-logserver.choumei.me]]></log4j.socket.host>
+				<log4j.socket.host><![CDATA[172.27.0.6]]></log4j.socket.host>
 				<log4j.socket.port><![CDATA[10003]]></log4j.socket.port>
 			
 			</properties>
