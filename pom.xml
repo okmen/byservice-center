@@ -152,8 +152,6 @@
 				<log4j.socket.host><![CDATA[192.168.1.120]]></log4j.socket.host>
 				<log4j.socket.port><![CDATA[10005]]></log4j.socket.port>
 				<isMWuserResultsTaskNeed>0</isMWuserResultsTaskNeed>
-				
-				
 			</properties>
 		</profile>
 
@@ -171,24 +169,23 @@
 				<publish.version>1.0.0-SNAPSHOT</publish.version>
 				<sdk.version>1.0.0-SNAPSHOT</sdk.version>
 				<byservice.api.version>1.0.0-SNAPSHOT</byservice.api.version>
-				<dubbo.registry.url><![CDATA[test-zookeeper.chudaokeji.me:2181]]></dubbo.registry.url>
+				<dubbo.registry.url><![CDATA[127.0.0.1:2181]]></dubbo.registry.url>
 				<dubbo.provider.port><![CDATA[32501]]></dubbo.provider.port>
 				<dubbo.provider.timeout><![CDATA[10000]]></dubbo.provider.timeout>
-				<dubbo.monitor.address><![CDATA[test-monitor.chudaokeji.me:7070]]></dubbo.monitor.address>
+				<dubbo.monitor.address><![CDATA[127.0.0.1:7070]]></dubbo.monitor.address>
 				
-				<mysql.admin.read.url><![CDATA[jdbc:mysql://rm-wz95ccxp4s9565xyv.mysql.rds.aliyuncs.com:3306/szaj_admin?useUnicode=true&autoReconnect=true&characterEncoding=UTF-8]]></mysql.admin.read.url>
-				<mysql.admin.read.username><![CDATA[db_chudaokeji]]></mysql.admin.read.username>
+				<mysql.admin.read.url><![CDATA[jdbc:mysql://gz-cdb-pm0v9xii.sql.tencentcdb.com:63697/test_by?useUnicode=true&autoReconnect=true&characterEncoding=UTF-8]]></mysql.admin.read.url>
+				<mysql.admin.read.username><![CDATA[root]]></mysql.admin.read.username>
 				<mysql.admin.read.password><![CDATA[db_123456]]></mysql.admin.read.password>
 
-				<mysql.admin.write.url><![CDATA[jdbc:mysql://rm-wz95ccxp4s9565xyv.mysql.rds.aliyuncs.com:3306/szaj_admin?useUnicode=true&autoReconnect=true&characterEncoding=UTF-8]]></mysql.admin.write.url>
-				<mysql.admin.write.username><![CDATA[db_chudaokeji]]></mysql.admin.write.username>
-				<mysql.admin.write.password><![CDATA[db_123456]]></mysql.admin.write.password>
-	
+				<mysql.admin.write.url><![CDATA[jdbc:mysql://gz-cdb-pm0v9xii.sql.tencentcdb.com:63697/test_by?useUnicode=true&autoReconnect=true&characterEncoding=UTF-8]]></mysql.admin.write.url>
+				<mysql.admin.write.username><![CDATA[root]]></mysql.admin.write.username>
+				<mysql.admin.read.password><![CDATA[db_123456]]></mysql.admin.read.password>
+
 
 				<redis.ipstr>132.232.37.89</redis.ipstr>
 				<redis.port>6379</redis.port>
 				<redis.auth>zhangyao@20180730</redis.auth>
-				
                 
 				<env.url_prefix><![CDATA[test.]]></env.url_prefix>
 				<log4j.rootLogger><![CDATA[DEBUG,socket,R,stdout]]></log4j.rootLogger>
